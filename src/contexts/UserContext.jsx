@@ -12,12 +12,25 @@ function UserProvider({ children }) {
     });
   };
 
+  const registro = (nombre, email) => {
+    setUser({
+        nombre: nombre,
+        email: email,
+    });
+  }
+
+  const logout = () => {
+    setUser(null);
+  }
+
   return (
     <UserContext.Provider
       value={{
         user,
         setUser,
         login,
+        registro,
+        logout,
       }}
     >
       {children}
