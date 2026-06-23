@@ -19,3 +19,12 @@ export const getCategories = async () => {
 
   return await response.json();
 };
+
+export async function getProductById(id) {
+  const response = await fetch(
+    `https://api.escuelajs.co/api/v1/products/${id}`
+  );
+
+  const data = await response.json();
+  return data;
+}
