@@ -1,8 +1,12 @@
 import { useParams } from "react-router-dom";
 import useProduct from "../hooks/useProduct";
+import { useContext } from "react";
+import { CartContext } from "../contexts/CartContext";
 
 function DetalleProducto() {
   const { id } = useParams();
+
+  const { agregarProducto } = useContext(CartContext);
   
   const { product, loading, error } = useProduct(id);
 
@@ -26,7 +30,9 @@ function DetalleProducto() {
 
     <p>Categoría: {product.category?.name}</p>
 
-    <button>
+    <button
+      onClick={() => agregarProducto(product)}
+    >
       Agregar al carrito
     </button>
   </div>
