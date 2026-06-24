@@ -40,6 +40,10 @@ function Navbar() {
     Contacto
   </Button>
 
+  <Button color="inherit" component={Link} to="/registro">
+    Registro
+  </Button>
+
   {user && (
     <Typography sx={{ ml: 2 }}>
       Hola, {user.nombre}

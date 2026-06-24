@@ -2,7 +2,7 @@ import useProducts from "../hooks/useProducts";
 import useCategories from "../hooks/useCategories";
 import ProductCard from "../components/ProductCard";
 import { CircularProgress } from "@mui/material";
-import { Container, Grid, TextField, Select, MenuItem } from "@mui/material";
+import { Container, Grid, TextField, Select, MenuItem, Pagination } from "@mui/material";
 import { useState } from "react";
 
 function Productos() {
@@ -13,6 +13,8 @@ const [search, setSearch] = useState("");
 
 const [selectedCategory, setSelectedCategory] = useState("");
 
+const [page, setPage] = useState(1);
+
 const filteredProducts = products.filter((product) =>
   product.title.toLowerCase().includes(search.toLowerCase())
 );
@@ -20,6 +22,11 @@ const filteredProducts = products.filter((product) =>
 const filteredByCategory = filteredProducts.filter((product) =>
   selectedCategory === "" || product.category?.name?.toLowerCase() === selectedCategory.toLowerCase()
 );
+
+const productsPerPage = 8;
+const startIndex = (page - 1) * productsPerPage;
+const endIndex = startIndex + productsPerPage;
+const currentProducts = filteredByCategory.slice(startIndex, endIndex);
 
   if (loading) {
     return <CircularProgress />;
@@ -71,12 +78,24 @@ const filteredByCategory = filteredProducts.filter((product) =>
       <p>Cantidad filtrada: {filteredByCategory.length}</p>
 
       <Grid container spacing={3}>
-        {filteredByCategory.map((product) => (
-          <Grid item key={product.id}>
+        {currentProducts.map((product) => (
+          <Grid key={product.id}>
             <ProductCard product={product} />
           </Grid>
         ))}
       </Grid>
+
+      <Pagination
+        count={Math.ceil(
+        filteredByCategory.length / productsPerPage
+      )}
+      page={page}
+      onChange={(event, value) =>
+        setPage(value)
+      }
+      sx={{ mt: 4 }}
+    />
+
     </Container>
   );
 }
