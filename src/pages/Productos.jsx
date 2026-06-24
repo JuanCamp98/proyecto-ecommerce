@@ -36,19 +36,12 @@ const currentProducts = filteredByCategory.slice(startIndex, endIndex);
   return (
     <Container sx={{ mt: 4 }}>
       <h1>Productos</h1>
-      <h2>Categorías</h2>
-
-    {categories.slice(0, 5).map((category) => (
-      <p key={category.id}>
-        {category.name}
-      </p>
-    ))}
-
+    
     <TextField
       label="Buscar producto"
       variant="outlined"
       fullWidth
-      sx={{ mb: 3 }}
+      sx={{ mb: 3, backgroundColor: "white" }}
       value={search}
       onChange={(e) => setSearch(e.target.value)}
     />
@@ -59,7 +52,7 @@ const currentProducts = filteredByCategory.slice(startIndex, endIndex);
         onChange={(e) =>
           setSelectedCategory(e.target.value)
         }
-        sx={{ mb: 3 }}
+        sx={{ mb: 3, backgroundColor: "white" }}
       >
         <MenuItem value="">
           Todas las categorías
@@ -77,7 +70,11 @@ const currentProducts = filteredByCategory.slice(startIndex, endIndex);
 
       <p>Cantidad filtrada: {filteredByCategory.length}</p>
 
-      <Grid container spacing={3}>
+      <Grid
+       container 
+       spacing={3}
+       justifyContent="center"
+      >
         {currentProducts.map((product) => (
           <Grid key={product.id}>
             <ProductCard product={product} />

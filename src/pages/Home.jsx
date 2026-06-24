@@ -17,13 +17,23 @@ const randomProducts = [...products]
   .slice(0, 8);
   
   return (
-    <Container sx={{ mt: 5 }}>
-      <Typography variant="h3" gutterBottom>
-        Bienvenido a Proyecto E-Commerce
+    <Container sx={{ mt: 5, textAlign: "center" }}>
+      <Typography
+       variant="h2" 
+       sx={{
+        fontWeight: "bold",
+        mb: 2,
+       }}
+       >
+        Bienvenido a la tienda E-Commerce
       </Typography>
 
-      <Typography variant="h6" gutterBottom>
-        Encontrá los mejores productos al mejor precio.
+      <Typography 
+      variant="h5" 
+      color="text.secondary"
+      sx={{ mb: 4 }}
+      >
+        Encontrá tecnologia, ropa, hogar y mucho más en un solo lugar.
       </Typography>
 
       <Button
@@ -34,6 +44,7 @@ const randomProducts = [...products]
       >
         Ver Productos
       </Button>
+    
 
       <Typography
   variant="h4"

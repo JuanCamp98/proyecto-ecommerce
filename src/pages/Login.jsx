@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
+import { Container, TextField, Button, Alert, Typography } from "@mui/material";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -20,28 +21,53 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
+  <Container
+    maxWidth="sm"
+    sx={{
+      mt: 4,
+      p: 4,
+      backgroundColor: "#ffffff",
+      borderRadius: 2,
+      boxShadow: 3,
+    }}
+  >
+    <Typography
+      variant="h3"
+      align="center"
+      gutterBottom
+    >
+      Ingresar
+    </Typography>
 
-      <input
+    <form onSubmit={handleSubmit}>
+      <TextField
+        label="Email"
         type="email"
-        placeholder="Email"
+        fullWidth
+        sx={{ mb: 2 }}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
-      <input
+      <TextField
+        label="Contraseña"
         type="password"
-        placeholder="Password"
+        fullWidth
+        sx={{ mb: 3 }}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button type="submit">
+      <Button
+        type="submit"
+        variant="contained"
+        fullWidth
+      >
         Ingresar
-      </button>
+      </Button>
     </form>
-  );
+  </Container>
+);
 }
 
 export default Login;

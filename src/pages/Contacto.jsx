@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, TextField, Button, Alert } from "@mui/material";
+import { Container, TextField, Button, Alert, Typography } from "@mui/material";
 
 function Contacto() {
     const [nombre, setNombre] = useState("");
@@ -14,8 +14,22 @@ function Contacto() {
   setAsunto("");
   setMensaje("");
 };return (
-  <Container sx={{ mt: 4 }}>
-    <h1>Contacto</h1>
+  <Container maxWidth="md"
+   sx={{
+     mt: 4,
+     p: 4,
+     backgroundColor: "#ffffff",
+     borderRadius: 2,
+     boxShadow: 3,
+   }}
+  >
+    <Typography
+      variant="h3"
+      align="center"
+      gutterBottom
+    >
+      Contacto
+    </Typography>
 
     {enviado && (
       <Alert severity="success" sx={{ mb: 2 }}>

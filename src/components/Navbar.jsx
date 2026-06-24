@@ -7,40 +7,49 @@ function Navbar() {
   const { user } = useContext(UserContext);
 
   return (
-    <AppBar position="static">
-      <Toolbar>
+    <AppBar
+  position="sticky"
+  sx={{
+    background: "#1e293b",
+    boxShadow: 3,
+  }}
+>
+  <Toolbar>
   <Typography
-    variant="h6"
-    sx={{ flexGrow: 1 }}
+    variant="h5"
+    sx={{
+       flexGrow: 1,
+       fontWeight: "bold",
+     }}
   >
-    Proyecto E-Commerce
+    Tienda E-Commerce
   </Typography>
 
   <Button color="inherit" component={Link} to="/">
     Home
   </Button>
 
-  <Button color="inherit" component={Link} to="/productos">
+  <Button color="inherit" component={Link} to="/productos" sx={{ mx: 0.5}}>
     Productos
   </Button>
 
-  <Button color="inherit" component={Link} to="/carrito">
+  <Button color="inherit" component={Link} to="/carrito" sx={{ mx: 0.5}}>
     Carrito
   </Button>
 
-  <Button color="inherit" component={Link} to="/login">
+  <Button color="inherit" component={Link} to="/login" sx={{ mx: 0.5}}>
     Login
   </Button>
 
-  <Button color="inherit" component={Link} to="/perfil">
+  <Button color="inherit" component={Link} to="/perfil" sx={{ mx: 0.5}}>
     Perfil
   </Button>
 
-  <Button color="inherit" component={Link} to="/contacto">
+  <Button color="inherit" component={Link} to="/contacto" sx={{ mx: 0.5}}>
     Contacto
   </Button>
 
-  <Button color="inherit" component={Link} to="/registro">
+  <Button color="inherit" component={Link} to="/registro" sx={{ mx: 0.5}}>
     Registro
   </Button>
 
