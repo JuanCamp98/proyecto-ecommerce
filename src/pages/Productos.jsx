@@ -2,7 +2,7 @@ import useProducts from "../hooks/useProducts";
 import useCategories from "../hooks/useCategories";
 import ProductCard from "../components/ProductCard";
 import { CircularProgress } from "@mui/material";
-import { Container, Grid, TextField } from "@mui/material";
+import { Container, Grid, TextField, Select, MenuItem } from "@mui/material";
 import { useState } from "react";
 
 function Productos() {
@@ -11,11 +11,15 @@ const { categories } = useCategories();
 
 const [search, setSearch] = useState("");
 
+const [selectedCategory, setSelectedCategory] = useState("");
+
 const filteredProducts = products.filter((product) =>
   product.title.toLowerCase().includes(search.toLowerCase())
 );
 
-
+const filteredByCategory = filteredProducts.filter((product) =>
+  selectedCategory === "" || product.category?.name?.toLowerCase() === selectedCategory.toLowerCase()
+);
 
   if (loading) {
     return <CircularProgress />;
@@ -42,8 +46,32 @@ const filteredProducts = products.filter((product) =>
       onChange={(e) => setSearch(e.target.value)}
     />
 
+    <Select
+        fullWidth
+        value={selectedCategory}
+        onChange={(e) =>
+          setSelectedCategory(e.target.value)
+        }
+        sx={{ mb: 3 }}
+      >
+        <MenuItem value="">
+          Todas las categorías
+        </MenuItem>
+
+        {categories.map((category) => (
+          <MenuItem
+            key={category.id}
+            value={category.name}
+          >
+            {category.name}
+          </MenuItem>
+        ))}
+      </Select>
+
+      <p>Cantidad filtrada: {filteredByCategory.length}</p>
+
       <Grid container spacing={3}>
-        {filteredProducts.slice(0, 8).map((product) => (
+        {filteredByCategory.map((product) => (
           <Grid item key={product.id}>
             <ProductCard product={product} />
           </Grid>
