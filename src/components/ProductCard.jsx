@@ -12,11 +12,11 @@ function ProductCard({ product }) {
     <Card 
     sx={{ 
       maxWidth: 300,
-      height: "100%",
-      transition: "transform 0.3s",
+      borderRadius: 3,
+      boxShadow: 6,
+      transition: "0.3s",
       "&:hover": {
         transform: "scale(1.03)",
-        boxShadow: 6,
       },
     }}
   >

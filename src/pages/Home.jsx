@@ -47,13 +47,13 @@ const randomProducts = [...products]
     
 
       <Typography
-  variant="h4"
-  sx={{ mt: 5, mb: 3 }}
->
-  Productos Destacados
-</Typography>
+        variant="h4"
+        sx={{ mt: 8, mb: 4 }}
+      >
+        Productos Destacados
+      </Typography>
 
-<Grid container spacing={3}>
+<Grid container spacing={3} justifyContent="center">
   {randomProducts.map((product) => (
     <Grid item key={product.id}>
       <ProductCard product={product} />

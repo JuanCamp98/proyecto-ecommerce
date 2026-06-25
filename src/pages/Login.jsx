@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { Container, TextField, Button, Alert, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -24,7 +25,7 @@ function Login() {
   <Container
     maxWidth="sm"
     sx={{
-      mt: 4,
+      mt: 6,
       p: 4,
       backgroundColor: "#ffffff",
       borderRadius: 2,
@@ -65,6 +66,22 @@ function Login() {
       >
         Ingresar
       </Button>
+
+      <Typography
+      sx={{ mt: 2 }}
+      align="center"
+      >
+        ¿No tienes una cuenta? 
+      </Typography>
+
+      <Button
+        component={Link}
+        to="/registro"
+        sx={{ mt: 1 }}
+      >
+        Registrarse
+      </Button>
+        
     </form>
   </Container>
 );

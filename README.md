@@ -1,16 +1,29 @@
-# React + Vite
+Proyecto E-commerce React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Descripción
 
-Currently, two official plugins are available:
+Este proyecto es una aplicación web de tipo e-commerce desarrollada con React. Permite a los usuarios registrarse, iniciar sesión, ver productos, filtrarlos, ver el detalle de cada uno y agregarlos a un carrito de compras. Además, incluye un sistema de usuario con perfil y persistencia de sesión.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+El objetivo del proyecto es simular el flujo básico de una tienda online moderna, aplicando conceptos de desarrollo frontend con manejo de estado global.
 
-## React Compiler
+Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Registro de usuarios
+Login / Logout
+Perfil de usuario
+Listado de productos
+Búsqueda y filtrado de productos
+Detalle de producto
+Carrito de compras (Context API)
+Navbar dinámico según sesión
+Navegación entre páginas (React Router)
 
-## Expanding the ESLint configuration
+Tecnologías utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+React
+React Router DOM
+Context API
+Material UI (MUI)
+JavaScript (ES6+)
+Vite (o Create React App según tu setup)
+CSS básico / estilos de MUI

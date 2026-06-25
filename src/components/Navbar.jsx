@@ -22,7 +22,7 @@ function Navbar() {
        fontWeight: "bold",
      }}
   >
-    Tienda E-Commerce
+    La tienda de Pocho
   </Typography>
 
   <Button color="inherit" component={Link} to="/">

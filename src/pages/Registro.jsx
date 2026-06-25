@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
+import { Container, TextField, Button, Typography } from "@mui/material";
 
 function Registro() {
   const [nombre, setNombre] = useState("");
@@ -33,42 +34,72 @@ if (password !== confirmPassword) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Registro</h1>
+  <Container
+    maxWidth="sm"
+    sx={{
+      mt: 4,
+      p: 4,
+      backgroundColor: "#ffffff",
+      borderRadius: 2,
+      boxShadow: 3,
+    }}
+  >
+    <Typography
+      variant="h3"
+      align="center"
+      gutterBottom
+    >
+      Registro
+    </Typography>
 
-      <input
-        type="text"
-        placeholder="Nombre"
+    <form onSubmit={handleSubmit}>
+      <TextField
+        label="Nombre"
+        fullWidth
+        sx={{ mb: 2 }}
         value={nombre}
         onChange={(e) => setNombre(e.target.value)}
       />
 
-      <input
+      <TextField
+        label="Email"
         type="email"
-        placeholder="Email"
+        fullWidth
+        sx={{ mb: 2 }}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
-      <input
+      <TextField
+        label="Contraseña"
         type="password"
-        placeholder="Password"
+        fullWidth
+        sx={{ mb: 2 }}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <input
+      <TextField
+        label="Confirmar Contraseña"
         type="password"
-        placeholder="Confirmar Password"
+        fullWidth
+        sx={{ mb: 3 }}
         value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
+        onChange={(e) =>
+          setConfirmPassword(e.target.value)
+        }
       />
 
-      <button type="submit">
+      <Button
+        type="submit"
+        variant="contained"
+        fullWidth
+      >
         Registrarse
-      </button>
+      </Button>
     </form>
-  );
+  </Container>
+);
 }
 
 export default Registro;
