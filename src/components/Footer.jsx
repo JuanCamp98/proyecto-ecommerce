@@ -5,35 +5,47 @@ function Footer() {
     <Box
       component="footer"
       sx={{
-        bgcolor: "#1976d2",
+        backgroundColor: "#1e293b",
         color: "white",
         textAlign: "center",
-        padding: 3,
-        marginTop: 5,
+        py: 4,
+        mt: 8,
       }}
     >
-      <Typography variant="h6">
-        Proyecto E-Commerce
+      <Typography
+        variant="h5"
+        sx={{
+          fontWeight: "bold",
+          mb: 1,
+        }}
+      >
+        La Tienda de Pocho
+      </Typography>
+
+      <Typography variant="body1">
+        Proyecto Final - Desarrollo Web
+      </Typography>
+
+      <Typography sx={{ mt: 2 }}>
+        📧 contacto@latiendadepocho.com
       </Typography>
 
       <Typography>
-        Email: contacto@ecommerce.com
+        📍 Posadas, Misiones - Argentina
       </Typography>
 
-      <Typography>
-        Teléfono: 3764123456
+      <Typography sx={{ mt: 2 }}>
+        © {new Date().getFullYear()} La Tienda de Pocho
       </Typography>
 
-      <Typography>
-        Dirección: Posadas, Misiones
-      </Typography>
-
-      <Typography>
-        Facebook | Instagram | X
-      </Typography>
-
-      <Typography sx={{ marginTop: 1 }}>
-        © 2026 Proyecto E-Commerce
+      <Typography
+        variant="body2"
+        sx={{
+          mt: 1,
+          opacity: 0.8,
+        }}
+      >
+        Todos los derechos reservados.
       </Typography>
     </Box>
   );

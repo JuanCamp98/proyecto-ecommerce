@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-
 import Home from "../pages/Home";
 import Productos from "../pages/Productos";
 import DetalleProducto from "../pages/DetalleProducto";
@@ -8,6 +7,7 @@ import Registro from "../pages/Registro";
 import Carrito from "../pages/Carrito";
 import Perfil from "../pages/Perfil";
 import Contacto from "../pages/Contacto";
+import CompraExitosa from "../pages/CompraExitosa";
 import NotFound from "../pages/NotFound";
 
 function AppRouter() {
@@ -21,6 +21,7 @@ function AppRouter() {
       <Route path="/carrito" element={<Carrito />} />
       <Route path="/perfil" element={<Perfil />} />
       <Route path="/contacto" element={<Contacto />} />
+      <Route path="/compra-exitosa" element={<CompraExitosa />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
